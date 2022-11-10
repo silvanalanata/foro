@@ -1,0 +1,39 @@
+*{
+font-family: cursive;
+
+}
+
+div{
+    border-bottom: 2px solid grey;
+}
+
+.foro{
+    display: flex;
+    flex-direction: column;
+    margin: 10px 150px 0px 150px;
+}
+
+label{
+    margin-top: 20px;
+}
+button{
+    margin: 20px 0px 10px 750px;
+    
+}
+
+.nombre{
+    margin-right: 700px;
+}
+
+.mensaje{
+    border: 2px solid grey;
+    margin: 10px 100px 0px 100px;
+}
+.comentario{
+    font-size: 15px;
+    border-bottom: 1px solid black;
+  
+}
+h4{
+    margin: 5px 50px 0px 100px;
+}

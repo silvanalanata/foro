@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Foro</title>
+</head>
+<body>
+
+    <h1>The Dojo Message Board</h1>
+    <div> </div>
+
+
+    <form class ="foro" action="/foro" method="post">
+
+        <label for="nombre">Nombre: </label>
+        <input class= "nombre" type="text" name="introducir_nombre_padre" required> 
+    
+        <label>Mensaje:</label>            
+        <textarea type="text" name="introducir_mensaje" rows="10" required> </textarea>
+
+        <button>Enviar</button>
+</form>
+
+
+<h1>Foros...: </h1>    
+         
+<% for (var x in mensajes) { %>
+         
+    <section class="mensaje"> 
+      
+        <div> 
+        <h5> Nombre: <%= mensajes[x].nombre %> </h5>
+        <h5> Mensaje: <%= mensajes[x].mensaje %> </h5>
+        </div>
+        
+        <% for (var i in mensajes[x].comentario) { %>
+       
+                
+                <h4 > Nombre: <%= mensajes[x].comentario[i].nombre %> </h4>
+                <h4 class = "comentario"> Mensaje: <%= mensajes[x].comentario[i].mensaje %> </h4>
+                
+                <% } %>
+
+        <form class ="foro" action="/comentario" method="post">
+            <input type="hidden" name="id" value="<%= mensajes[x]._id %>" >
+
+            <label for="nombre">Nombre: </label>
+            <input class= "nombre" type="text" name="introducir_nombre_come"> 
+        
+            <label>Mensaje:</label>            
+            <textarea type="text" name="introducir_comentario" rows="10"> </textarea>
+    
+            <button>Enviar</button>
+    </form>
+      
+    </section>  
+
+
+<% } %>
+
+
+
+
+    
+</body>
+</html>
